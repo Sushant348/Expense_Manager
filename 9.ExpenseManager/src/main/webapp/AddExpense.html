@@ -1,0 +1,49 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>ADD EXPENSE</title>
+<link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body>
+
+<section align="center" class="w-screen h-screen flex justify-center items-center bg-gray-300">
+<form action="AddExpense" method="post" class="w-72 bg-white border-2 border-black text-center p-5 grid gap-5 shadow-2xl shadow-black">
+   <div><h1>ADD EXPENSE</h1>
+   <input type="number" name="expense" min="0" class="border border-black" required="required"></div>
+   <div><label>SELECT CATEGORY</label><br>
+   <select name="category" class="border border-black" required="required">
+   <option></option>
+    <option name="category" value="EDUCATION">EDUCATION</option>
+    <option name="category" value="FOOD">FOOD</option>
+    <option name="category" value="TRAVLLING">TRAVLLING</option>
+    <option name="category" value="SERVICES">SERVICES</option>
+     <option name="category" value="MEDICAL">MEDICAL</option>
+     <option name="category" value="PARTY">PARTY</option>
+     <option name="category" value="TAX">TAX</option>
+    <option name="category" value="SHOPPING">SHOPPING</option>
+    <option name="category" value="TRIP">TRIP</option>
+    <option name="category" value="ENTERTAINMENT">ENTERTAINMENT</option>
+     <option name="category" value="ELECTRONICS">ELECTRONICS</option>
+     <option name="category" value="OTHER">OTHER</option>
+   </select></div>
+   <div><label>SELECT PAYMENT METHOD</label><br>
+   <select name="paymentMethod" class="border border-black" required="required">
+   <option></option>
+    <option name="paymentMethod" value="BANK">BANK</option>
+    <option name="paymentMethod" value="CARD">CARD</option>
+    <option name="paymentMethod" value="CASH">CASH</option>
+    <option name="paymentMethod" value="OTHER">OTHER</option>
+    </select></div>
+    <div><input type="text" placeholder="ADD NOTE" name="ADD NOTE" class="border border-black"></div>
+    <div class="grid gap-2"> <label>SELECT DATE AND TIME</label><input type="date" id="datePickerId" name="date"  class="border border-black" required="required"><input type="time"  name="time" class="border border-black"></div>
+    <input type="submit" value="addExpense" class="cursor-pointer p-3 bg-red-500 border border-black">
+</form>
+</section>
+<script>
+  const datePickerId = document.getElementById("datePickerId");
+  datePickerId.max = new Date().toISOString().split("T")[0];
+</script>
+</body>
+</html>
